@@ -1,0 +1,11 @@
+body{
+    background-color: #333333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form{
+    position: absolute;
+}
