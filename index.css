@@ -1,11 +1,24 @@
-body{
-    background-color: #333333;
-    height: 100vh;
+body {
+  background-color: #333333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.input-form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.input {
+    /* position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.input-form{
-    position: absolute;
+    margin-top: 20px; */
 }
