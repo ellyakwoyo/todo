@@ -15,10 +15,20 @@ body {
   align-items: center;
   margin-top: 20px;
 }
-.input {
-    /* position: relative;
+.submit-btn{
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin-top: 20px; */
+    margin-top: 20px;
+}
+
+.btn{
+  height: 36px;
+  width: 100px;
+}
+
+.exact-input{
+  height: 36px;
+  width: 100%;
+  text-align: center;
 }
