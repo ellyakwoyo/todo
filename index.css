@@ -32,3 +32,31 @@ body {
   width: 100%;
   text-align: center;
 }
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 700px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
