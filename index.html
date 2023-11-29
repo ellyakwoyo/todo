@@ -29,54 +29,66 @@
             <th>End time</th>
             <th>Completed?</th>
           </tr>
-          <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Ernst Handel</td>
-            <td>Roland Mendel</td>
-            <td>Austria</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Island Trading</td>
-            <td>Helen Bennett</td>
-            <td>UK</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Laughing Bacchus Winecellars</td>
-            <td>Yoshi Tannamuri</td>
-            <td>Canada</td>
-            <td>Canada</td>
-          </tr>
-          <tr>
-            <td>Magazzini Alimentari Riuniti</td>
-            <td>Giovanni Rovelli</td>
-            <td>Italy</td>
-            <td>Italy</td>
-          </tr>
         </table>
       </div>
       <div class="input-form">
-        <form action="" >
+        <form action="" name="input" id="input">
           <div>
-            <input type="text" class= "exact-input" placeholder="Enter activity" />
+            <input
+              type="text"
+              class="exact-input"
+              name="activity"
+              id="activity"
+              placeholder="Enter activity"
+              required
+            />
+            <input
+              type="text"
+              class="exact-input"
+              name="start"
+              id="start"
+              placeholder="Enter start time"
+              required
+            />
+            <input
+              type="text"
+              class="exact-input"
+              name="end"
+              id="end"
+              placeholder="Enter ending time"
+              required
+            />
           </div>
           <div class="submit-btn">
-            <button class="btn">Submit</button>
+            <button class="btn" type="submit">Submit</button>
           </div>
         </form>
       </div>
     </div>
+
+    <script>
+      document
+        .getElementById("input")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const activity = document.getElementById("activity").value;
+          const start = document.getElementById("start").value;
+          const end = document.getElementById("end").value;
+
+          const table = document.getElementById("table");
+          const newRow = table.insertRow(-1); // -1 appends a row at the end
+
+          // Insert cells with the form values into the new row
+          const cell1 = newRow.insertCell(0);
+          const cell2 = newRow.insertCell(1);
+          const cell3 = newRow.insertCell(2);
+          const cell4 = newRow.insertCell(3);
+          cell1.innerHTML = activity;
+          cell2.innerHTML = start;
+          cell3.innerHTML = end;
+          cell4.innerHTML = "";
+        });
+    </script>
   </body>
 </html>
