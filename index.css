@@ -1,11 +1,13 @@
 body {
   background-color: #333333;
   height: 100vh;
+  margin: 0;
+}
+.inner-content{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  /* height: 80vh; */
 }
 
 .input-form {
