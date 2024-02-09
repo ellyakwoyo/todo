@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Project</title>
+  </head>
+  <body>
+    <h1>JavaScript Project</h1>
+    <button id="myButton">Click Me</button>
+    <p id="displayText"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const displayText = document.getElementById("displayText");
+      function calculateSum(n) {
+    let sum = 0;
+    for (let i = 1; i <= n; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
+// Add event listener to the button
+button.addEventListener('click', () => {
+    // Get user input
+    const userInput = parseInt(prompt('Enter a number for summation:'));
+    // Check if user input is valid
+    if (!isNaN(userInput) && userInput > 0) {
+        // Calculate summation
+        const result = calculateSum(userInput);
+        // Display the result
+        displayText.textContent = `Summation of numbers from 1 to ${userInput} is ${result}.`;
+    } else {
+        displayText.textContent = 'Invalid input. Please enter a positive number.';
+    }
+});
+    </script>
+  </body>
+</html>
