@@ -6,30 +6,29 @@
     <title>DSA</title>
   </head>
   <body>
-    <h1>Data Structures and algorithms SUMMATION</h1>
-    <button id="myButton">SUMMATION</button>
+    <h1>Data Structures and algorithms FIBANOCCI</h1>
+    <button id="myButton">FIBANOCCI</button>
     <p id="displayText"></p>
     <script>
       const button = document.getElementById("myButton");
       const displayText = document.getElementById("displayText");
-      function calculateSum(n) {
-        let sum = 0;
-        for (let i = 1; i <= n; i++) {
-          sum += i;
+      function fibanocci(n) {
+        const fib = [0, 1];
+        for (let i = 2; i < n; i++) {
+          fib[i] = (fib[i - 1] + fib[i - 2]);
         }
-        return sum;
+        return fib;
       }
-
       // Add event listener to the button
       button.addEventListener("click", () => {
         // Get user input
-        const userInput = parseInt(prompt("Enter a number for summation:"));
+        const userInput = parseInt(prompt("Enter a number for FIBANOCCI:"));
         // Check if user input is valid
         if (!isNaN(userInput) && userInput > 0) {
           // Calculate summation
-          const result = calculateSum(userInput);
+          const result = fibanocci(userInput);
           // Display the result
-          displayText.textContent = `Summation of numbers from 1 to ${userInput} is ${result}.`;
+          displayText.textContent = `FIBANOCCI of ${userInput} is ${result}.`;
         } else {
           displayText.textContent =
             "Invalid input. Please enter a positive number.";
