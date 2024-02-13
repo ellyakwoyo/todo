@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA</title>
+  </head>
+  <body>
+    <h1>Data Structures and algorithms PRIME NUMBER</h1>
+    <button id="myButton">PRIME NUMBER</button>
+    <p id="displayText"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const displayText = document.getElementById("displayText");
+      function isPrimeNumber(n) {
+        if (n < 2) {
+          return false;
+        }
+        for (let i = 2; i < n; i++) {
+          if (n % i === 0) {
+            return false;
+          }
+        }
+
+        return true;
+      }
+      // Add event listener to the button
+      button.addEventListener("click", () => {
+        // Get user input
+        const userInput = parseInt(prompt("Enter a number to check if it is prime:"));
+        // Check if user input is valid
+        if (!isNaN(userInput) && userInput > 0) {
+          // Calculate summation
+          const result = isPrimeNumber (userInput);
+          // Display the result
+          if (result === true) {
+            displayText.textContent = `${userInput} is is a prime number.`;
+          }else{
+            displayText.textContent = `${userInput} is is not a prime number.`;
+          }
+        } else {
+          displayText.textContent =
+            "Invalid input. Please enter a positive number.";
+        }
+      });
+    </script>
+  </body>
+</html>

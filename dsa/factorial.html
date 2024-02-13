@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA</title>
+  </head>
+  <body>
+    <h1>Data Structures and algorithms FACTORIAL</h1>
+    <button id="myButton">FACTORIAL</button>
+    <p id="displayText"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const displayText = document.getElementById("displayText");
+      function factorial(n) {
+        let fac = 1;
+        for (let i = 1; i <= n; i++) {
+          fac *= i;
+        }
+        return fac;
+      }
+      // Add event listener to the button
+      button.addEventListener("click", () => {
+        // Get user input
+        const userInput = parseInt(prompt("Enter a number for FACTORIAL:"));
+        // Check if user input is valid
+        if (!isNaN(userInput) && userInput > 0) {
+          // Calculate summation
+          const result = factorial(userInput);
+          // Display the result
+          displayText.textContent = `FACTORIAL of ${userInput} is ${result}.`;
+        } else {
+          displayText.textContent =
+            "Invalid input. Please enter a positive number.";
+        }
+      });
+    </script>
+  </body>
+</html>
