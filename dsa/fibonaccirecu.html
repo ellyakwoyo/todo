@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA</title>
+  </head>
+  <body>
+    <h1>Data Structures and algorithms Fibonacci recurssion</h1>
+    <button id="myButton">Fibonacci recurssively</button>
+    <p id="displayText"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const displayText = document.getElementById("displayText");
+      function isFibonacciRecussion(n) {
+        const fib = [0, 1];
+
+        for (let i = 2; i < n; i++) {
+          fib[i] = fib[i - 1] + fib[i - 2];
+        }
+        return fib;
+      }
+      // Add event listener to the button
+      button.addEventListener("click", () => {
+        // Get user input
+        const userInput = parseInt(
+          prompt("Enter a number to check if its fibonacci reccursively:")
+        );
+        // Check if user input is valid
+        if (!isNaN(userInput) && userInput > 0) {
+          // Calculate summation
+          const result = isFibonacciRecussion(userInput);
+          displayText.textContent = `Fibonacci of ${userInput} is ${result}`;
+        } else {
+          displayText.textContent =
+            "Invalid input. Please enter a positive number.";
+        }
+      });
+    </script>
+  </body>
+</html>
