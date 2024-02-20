@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSA</title>
+  </head>
+  <body>
+    <h1>Data Structures and algorithms POWER OF 2</h1>
+    <button id="myButton">Power of 2</button>
+    <p id="displayText"></p>
+    <script>
+      const button = document.getElementById("myButton");
+      const displayText = document.getElementById("displayText");
+      function isPowerOfTwo(n) {
+        if (n <= 0) {
+          return false;
+        }
+         while(n%2 === 0) {
+
+            n /= 2;
+         }
+
+        if (n === 1){
+
+            return true;
+        }
+        return false;
+    }
+      // Add event listener to the button
+      button.addEventListener("click", () => {
+        // Get user input
+        const userInput = parseInt(prompt("Enter a number to check if it is power of two:"));
+        // Check if user input is valid
+        if (!isNaN(userInput) && userInput > 0) {
+          // Calculate summation
+          const result = isPowerOfTwo (userInput);
+          // Display the result
+          if (result === true) {
+            displayText.textContent = `${userInput} is is power of two.`;
+          }else{
+            displayText.textContent = `${userInput} is is not power of two.`;
+          }
+        } else {
+          displayText.textContent =
+            "Invalid input. Please enter a positive number.";
+        }
+      });
+    </script>
+  </body>
+</html>
